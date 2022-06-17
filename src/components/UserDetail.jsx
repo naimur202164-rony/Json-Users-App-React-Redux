@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
 import { Container, Card, Row, Col, Button } from "react-bootstrap";
 import { setSelectedUsers } from "../redux/action/userAction";
+import Header from "./Header";
 export default function UserDetail() {
   const { usersId } = useParams();
   const usersSelected=useSelector((state)=>state.selectedUsers);
@@ -11,7 +12,7 @@ export default function UserDetail() {
   console.log(usersSelected);
   const fetchUser = async () => {
     const respone = await axios
-      .get(`https://jsonplaceholder.typicode.com/users/${usersId}`)
+      .get(`https://jsonplaceholder.typicode.com/posts/${usersId}`)
       .catch((err) => {
         console.log(err);
       });
@@ -24,19 +25,22 @@ export default function UserDetail() {
 
   return (
     <div>
+      <Header/>
       {/* {usersId} */}
       <Container>
         <Row>
           <Col>
             <Card>
-              <Card.Header>{usersSelected.name}</Card.Header>
+              <Card.Header>{usersSelected.title}</Card.Header>
               <Card.Body>
-                <Card.Title>{usersSelected.username}</Card.Title>
+                <Card.Title>{usersSelected.body}</Card.Title>
                 <Card.Title>{usersSelected.id}</Card.Title>
                 <Card.Text>
                  {usersSelected.email}
                 </Card.Text>
-                <Button variant="primary">Go To post</Button>
+                <Button variant="info ">
+                <Link to={`/comments/${usersSelected.id}`}>comments</Link>
+                </Button>
               </Card.Body>
             </Card>
           </Col>

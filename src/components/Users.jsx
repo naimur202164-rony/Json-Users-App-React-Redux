@@ -40,8 +40,9 @@ export default function Users() {
                    <h6>Email {users.email}</h6>
                   </Card.Text>
                   <Button variant="info">
-                    <Link to={`/users/${users.id}`}>Details</Link>
+                    <Link to={`/users/${users.id}`}>posts</Link>
                   </Button>
+                 
                 </Card.Body>
               </Card>
             </Col>

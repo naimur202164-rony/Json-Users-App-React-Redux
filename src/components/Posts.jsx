@@ -3,7 +3,7 @@ import Header from "./Header";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
 import { setPosts } from "../redux/action/userAction";
-import {Button,Row,Col,Card } from 'react-bootstrap';
+import {Button,Row,Col,Card, Container } from 'react-bootstrap';
 function Posts() {
   const postss = useSelector((state) => state.allPosts.posts);
   const dispatch = useDispatch();
@@ -24,7 +24,9 @@ function Posts() {
   return (
     <div>
       <Header />
-      <h2>POSTS</h2>
+    
+      <Container>
+      <h3>POSTS</h3>
       <Row>
         {postss.map((posts) => (
           <Col className="my-4">
@@ -45,6 +47,8 @@ function Posts() {
         </Col>
         ))}
       </Row>
+      </Container>
+    
     </div>
   );
 }
