@@ -16,7 +16,7 @@ function App() {
       <Route path="/users/:usersId" element={<UserDetail/>} />
       <Route path="/comments" element={<Comments/>}/>
       <Route path="/posts" element={<Posts/>}/>
-      <Route path="/comments/postId" element={UserCommnets}/>
+      <Route path="/posts/:postId" element={<UserCommnets/>}/>
      </Routes>
     </div>
   );
