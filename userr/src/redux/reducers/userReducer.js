@@ -5,7 +5,7 @@ const initialState={
     posts:[],
     comments:[],
     userSlected:[{}],
-    commentSelected:[{}]
+    commentSelected:[]
    
 
 }
