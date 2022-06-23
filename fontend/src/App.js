@@ -6,7 +6,6 @@ import UserCommnets from "./components/UserCommnets";
 import UserDetail from "./components/UserDetail";
 import Users from "./components/Users";
 import Home from "./pages/Home";
-
 function App() {
   return (
     <div>

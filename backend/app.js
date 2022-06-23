@@ -31,9 +31,9 @@ app.get("/users", async (req, res) => {
 app.get("/users/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const user = await pool.query("SELECT * FROM users");
-    const users1=user.rows[0].users;
-    res.send(users1);
+    const user = await pool.query("SELECT * FROM users WHERE id=$1", [id]);
+    const users=
+    res.send(user.rows[0].users);
   } catch (err) {
     console.log(err);
   }

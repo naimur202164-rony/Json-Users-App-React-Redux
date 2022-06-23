@@ -9,7 +9,7 @@ function Posts() {
   const dispatch = useDispatch();
   const fetchPosts = async () => {
     const respone = await axios
-      .get("https://jsonplaceholder.typicode.com/posts")
+      .get("http://localhost:5000/posts")
       .catch((err) => {
         console.log(err);
       });
@@ -33,11 +33,11 @@ function Posts() {
           <Card style={{ width: "18rem",height:"auto" }}>
 
             <Card.Body>
-                 <Card.Title><h6>Name: {posts.title.slice(3,20)}</h6> </Card.Title>
+                 <Card.Title><h6>Name: {posts.id}</h6> </Card.Title>
               <Card.Text>
 
-               <p>{posts.id }</p>
-               <p>{posts.body.slice(5,80)}</p>
+               <p>{posts.body }</p>
+               <p>{posts.email}</p>
               </Card.Text>
               <Button variant="info">
                Details

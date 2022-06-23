@@ -10,7 +10,6 @@ import Header from './Header';
 
 function UserCommnets() {
   const userCommnetss=useSelector((state)=>state.selectedComments.commentSelected);
-  console.log(userCommnetss)
   const dispatch=useDispatch()
   const fethData=async()=>{
     const response = await axios
@@ -29,9 +28,12 @@ const {postId}=useParams()
 
   return (
     <div>
+      
        <Header/>
       {/* {usersId} */}
+    
       <Container>
+      <h3>Comments</h3>
         <Row>
           {
             userCommnetss.map((items)=>(

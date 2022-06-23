@@ -12,7 +12,7 @@ export default function Users() {
 
   const fetchUsers = async () => {
     const response = await axios
-      .get("https://jsonplaceholder.typicode.com/users")
+      .get("http://localhost:5000/users")
       .catch((err) => {
         console.log("Err: ", err);
       });
@@ -24,6 +24,7 @@ export default function Users() {
   }, []);
 
   // console.log(userss);
+  console.log(userss)
   return (
     <>
       <Header />
@@ -36,7 +37,7 @@ export default function Users() {
                 <Card.Body>
                      <Card.Title><h6>Name: {users.name}</h6> </Card.Title>
                   <Card.Text>
-                   <h6>Phone {users.phone}</h6>
+                   <h6>Phone {users.name}</h6>
                    <h6>Email {users.email}</h6>
                   </Card.Text>
                   <Button variant="info">

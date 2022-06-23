@@ -10,7 +10,7 @@ function Comments() {
   // console.log(comments)
   const fetchUser = async () => {
     const respone = await axios
-      .get(`https://jsonplaceholder.typicode.com/comments`)
+      .get(`http://localhost:5000/comments`)
       .catch((err) => {
         console.log(err);
       });
@@ -33,7 +33,7 @@ function Comments() {
                     <h6>Name: {commet.name}</h6>{" "}
                   </Card.Title>
                   <Card.Text>
-                    <p>{commet.id}</p>
+                    <p>{commet.body1}</p>
                     <p>{commet.body.slice(5, 80)}</p>
                   </Card.Text>
                   <Button variant="info">Details</Button>
